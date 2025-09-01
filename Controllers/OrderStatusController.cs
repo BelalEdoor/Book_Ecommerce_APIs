@@ -6,41 +6,41 @@ namespace BOOKSTORE.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CartDetailssController : ControllerBase
+    public class OrderStatusController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public CartDetailssController(ApplicationDbContext context)
+        public OrderStatusController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CartDetails>>> GetAll()
+        public async Task<ActionResult<IEnumerable<OrderStatus>>> GetAll()
         {
-            return await _context.CartDetailss.AsNoTracking().ToListAsync();
+            return await _context.OrderStatus.AsNoTracking().ToListAsync();
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CartDetails>> Get(int id)
+        public async Task<ActionResult<OrderStatus>> Get(int id)
         {
-            var entity = await _context.CartDetailss.FindAsync(id);
+            var entity = await _context.OrderStatus.FindAsync(id);
             if (entity == null) return NotFound();
             return entity;
         }
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<ActionResult<CartDetails>> Create(CartDetails entity)
+        public async Task<ActionResult<OrderStatus>> Create(OrderStatus entity)
         {
-            _context.CartDetailss.Add(entity);
+            _context.OrderStatus.Add(entity);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(Get), new { id = (int)entity.Id }, entity);
         }
 
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, CartDetails entity)
+        public async Task<IActionResult> Update(int id, OrderStatus entity)
         {
             if (id != (int)entity.Id) return BadRequest();
             _context.Entry(entity).State = EntityState.Modified;
@@ -52,9 +52,9 @@ namespace BOOKSTORE.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var entity = await _context.CartDetailss.FindAsync(id);
+            var entity = await _context.OrderStatus.FindAsync(id);
             if (entity == null) return NotFound();
-            _context.CartDetailss.Remove(entity);
+            _context.OrderStatus.Remove(entity);
             await _context.SaveChangesAsync();
             return NoContent();
         }

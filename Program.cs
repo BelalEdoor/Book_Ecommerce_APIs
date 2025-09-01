@@ -1,18 +1,65 @@
-using BOOKSTORE;
-using BOOKSTORE.Controllers;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using BOOKSTORE; // Namespace تبعك
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Controllers
 builder.Services.AddControllers();
 
-// Swagger & JWT setup
+// ✅ CORS (توسيع السماح مؤقتًا للتطوير)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowDev", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// ✅ DbContext (EF Core)
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// ✅ Identity مع تخفيف قيود الباسورد
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = false;               // مش ضروري رقم
+    options.Password.RequiredLength = 4;                 // أقل طول 4
+    options.Password.RequireNonAlphanumeric = false;     // مش ضروري رموز خاصة
+    options.Password.RequireUppercase = false;           // مش ضروري حرف كبير
+    options.Password.RequireLowercase = false;           // مش ضروري حرف صغير
+})
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders();
+
+// ✅ JWT Authentication
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]!))
+    };
+});
+
+// ✅ Swagger مع دعم الـ JWT
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -43,70 +90,20 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-// DbContext
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Identity
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
-
-// JWT Authentication
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "ThisIsASecretKeyForJwtDontUseInProd";
-var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "bookshopping.api";
-
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = jwtIssuer,
-        ValidAudience = jwtIssuer,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
-    };
-});
-
-builder.Services.AddAuthorization();
-builder.Services.AddTransient<IStartupFilter, SeedStartupFilter>();
-
 var app = builder.Build();
 
-// Seed roles at startup
-using (var scope = app.Services.CreateScope())
-{
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
-    string[] roles = new[] { "Admin", "User" };
-
-    foreach (var role in roles)
-    {
-        if (!await roleManager.RoleExistsAsync(role))
-        {
-            await roleManager.CreateAsync(new IdentityRole(role));
-        }
-    }
-}
-
-// Configure middleware
-
-// Swagger UI ����� �� �� �������
+// ✅ Swagger UI مباشرة
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookShopping API v1");
-    c.RoutePrefix = string.Empty; // ��� ���� Swagger UI ���� ������ ��� /
+    c.RoutePrefix = string.Empty; // Swagger يفتح مباشرة على /
 });
 
 app.UseHttpsRedirection();
+
+// ✨ CORS قبل Authentication
+app.UseCors("AllowDev");
 
 app.UseAuthentication();
 app.UseAuthorization();

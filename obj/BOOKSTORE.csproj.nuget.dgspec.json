@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\OneDrive\\Desktop\\BOOKSTOR PROJECT\\BOOKSTORE\\BOOKSTORE\\BOOKSTORE.csproj": {}
+    "D:\\Trainings\\6- Back-end development (Trusted Systems)\\BookStore APIs\\BOOKSTORE\\BOOKSTORE\\BOOKSTORE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\OneDrive\\Desktop\\BOOKSTOR PROJECT\\BOOKSTORE\\BOOKSTORE\\BOOKSTORE.csproj": {
+    "D:\\Trainings\\6- Back-end development (Trusted Systems)\\BookStore APIs\\BOOKSTORE\\BOOKSTORE\\BOOKSTORE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\OneDrive\\Desktop\\BOOKSTOR PROJECT\\BOOKSTORE\\BOOKSTORE\\BOOKSTORE.csproj",
+        "projectUniqueName": "D:\\Trainings\\6- Back-end development (Trusted Systems)\\BookStore APIs\\BOOKSTORE\\BOOKSTORE\\BOOKSTORE.csproj",
         "projectName": "BOOKSTORE",
-        "projectPath": "C:\\Users\\hp\\OneDrive\\Desktop\\BOOKSTOR PROJECT\\BOOKSTORE\\BOOKSTORE\\BOOKSTORE.csproj",
+        "projectPath": "D:\\Trainings\\6- Back-end development (Trusted Systems)\\BookStore APIs\\BOOKSTORE\\BOOKSTORE\\BOOKSTORE.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\OneDrive\\Desktop\\BOOKSTOR PROJECT\\BOOKSTORE\\BOOKSTORE\\obj\\",
+        "outputPath": "D:\\Trainings\\6- Back-end development (Trusted Systems)\\BookStore APIs\\BOOKSTORE\\BOOKSTORE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

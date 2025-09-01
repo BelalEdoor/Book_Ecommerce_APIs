@@ -4,5 +4,6 @@ namespace BOOKSTORE
 {
     public class ApplicationUser : IdentityUser
     {
+        // „„ﬂ‰  ÷Ì› Œ’«∆’ ≈÷«›Ì… ··„” Œœ„ Â‰«
     }
 }

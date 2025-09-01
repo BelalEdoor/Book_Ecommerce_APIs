@@ -264,10 +264,10 @@
         }
       }
     },
-    "/api/CartDetailss": {
+    "/api/CartDetails": {
       "get": {
         "tags": [
-          "CartDetailss"
+          "CartDetails"
         ],
         "responses": {
           "200": {
@@ -303,7 +303,7 @@
       },
       "post": {
         "tags": [
-          "CartDetailss"
+          "CartDetails"
         ],
         "requestBody": {
           "content": {
@@ -348,10 +348,10 @@
         }
       }
     },
-    "/api/CartDetailss/{id}": {
+    "/api/CartDetails/{id}": {
       "get": {
         "tags": [
-          "CartDetailss"
+          "CartDetails"
         ],
         "parameters": [
           {
@@ -389,7 +389,7 @@
       },
       "put": {
         "tags": [
-          "CartDetailss"
+          "CartDetails"
         ],
         "parameters": [
           {
@@ -429,7 +429,7 @@
       },
       "delete": {
         "tags": [
-          "CartDetailss"
+          "CartDetails"
         ],
         "parameters": [
           {
@@ -634,10 +634,10 @@
         }
       }
     },
-    "/api/OrderDetailss": {
+    "/api/OrderDetails": {
       "get": {
         "tags": [
-          "OrderDetailss"
+          "OrderDetails"
         ],
         "responses": {
           "200": {
@@ -673,7 +673,7 @@
       },
       "post": {
         "tags": [
-          "OrderDetailss"
+          "OrderDetails"
         ],
         "requestBody": {
           "content": {
@@ -718,10 +718,10 @@
         }
       }
     },
-    "/api/OrderDetailss/{id}": {
+    "/api/OrderDetails/{id}": {
       "get": {
         "tags": [
-          "OrderDetailss"
+          "OrderDetails"
         ],
         "parameters": [
           {
@@ -759,7 +759,7 @@
       },
       "put": {
         "tags": [
-          "OrderDetailss"
+          "OrderDetails"
         ],
         "parameters": [
           {
@@ -799,7 +799,7 @@
       },
       "delete": {
         "tags": [
-          "OrderDetailss"
+          "OrderDetails"
         ],
         "parameters": [
           {
@@ -1004,10 +1004,10 @@
         }
       }
     },
-    "/api/OrderStatuss": {
+    "/api/OrderStatus": {
       "get": {
         "tags": [
-          "OrderStatuss"
+          "OrderStatus"
         ],
         "responses": {
           "200": {
@@ -1043,7 +1043,7 @@
       },
       "post": {
         "tags": [
-          "OrderStatuss"
+          "OrderStatus"
         ],
         "requestBody": {
           "content": {
@@ -1088,10 +1088,10 @@
         }
       }
     },
-    "/api/OrderStatuss/{id}": {
+    "/api/OrderStatus/{id}": {
       "get": {
         "tags": [
-          "OrderStatuss"
+          "OrderStatus"
         ],
         "parameters": [
           {
@@ -1129,7 +1129,7 @@
       },
       "put": {
         "tags": [
-          "OrderStatuss"
+          "OrderStatus"
         ],
         "parameters": [
           {
@@ -1169,7 +1169,7 @@
       },
       "delete": {
         "tags": [
-          "OrderStatuss"
+          "OrderStatus"
         ],
         "parameters": [
           {

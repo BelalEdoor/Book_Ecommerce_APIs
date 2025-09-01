@@ -151,9 +151,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.CartDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.CartDetailsController",
     "Method": "GetAll",
-    "RelativePath": "api/CartDetailss",
+    "RelativePath": "api/CartDetails",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -171,9 +171,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.CartDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.CartDetailsController",
     "Method": "Create",
-    "RelativePath": "api/CartDetailss",
+    "RelativePath": "api/CartDetails",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -197,9 +197,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.CartDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.CartDetailsController",
     "Method": "Get",
-    "RelativePath": "api/CartDetailss/{id}",
+    "RelativePath": "api/CartDetails/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -223,9 +223,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.CartDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.CartDetailsController",
     "Method": "Update",
-    "RelativePath": "api/CartDetailss/{id}",
+    "RelativePath": "api/CartDetails/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -244,9 +244,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.CartDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.CartDetailsController",
     "Method": "Delete",
-    "RelativePath": "api/CartDetailss/{id}",
+    "RelativePath": "api/CartDetails/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -369,9 +369,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderDetailsController",
     "Method": "GetAll",
-    "RelativePath": "api/OrderDetailss",
+    "RelativePath": "api/OrderDetails",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -389,9 +389,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderDetailsController",
     "Method": "Create",
-    "RelativePath": "api/OrderDetailss",
+    "RelativePath": "api/OrderDetails",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -415,9 +415,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderDetailsController",
     "Method": "Get",
-    "RelativePath": "api/OrderDetailss/{id}",
+    "RelativePath": "api/OrderDetails/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -441,9 +441,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderDetailsController",
     "Method": "Update",
-    "RelativePath": "api/OrderDetailss/{id}",
+    "RelativePath": "api/OrderDetails/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -462,9 +462,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderDetailssController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderDetailsController",
     "Method": "Delete",
-    "RelativePath": "api/OrderDetailss/{id}",
+    "RelativePath": "api/OrderDetails/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -587,9 +587,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderStatussController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderStatusController",
     "Method": "GetAll",
-    "RelativePath": "api/OrderStatuss",
+    "RelativePath": "api/OrderStatus",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -607,9 +607,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderStatussController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderStatusController",
     "Method": "Create",
-    "RelativePath": "api/OrderStatuss",
+    "RelativePath": "api/OrderStatus",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -633,9 +633,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderStatussController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderStatusController",
     "Method": "Get",
-    "RelativePath": "api/OrderStatuss/{id}",
+    "RelativePath": "api/OrderStatus/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -659,9 +659,9 @@
     ]
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderStatussController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderStatusController",
     "Method": "Update",
-    "RelativePath": "api/OrderStatuss/{id}",
+    "RelativePath": "api/OrderStatus/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -680,9 +680,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BOOKSTORE.Controllers.OrderStatussController",
+    "ContainingType": "BOOKSTORE.Controllers.OrderStatusController",
     "Method": "Delete",
-    "RelativePath": "api/OrderStatuss/{id}",
+    "RelativePath": "api/OrderStatus/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
