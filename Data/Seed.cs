@@ -25,11 +25,12 @@ namespace BOOKSTORE.Controllers
             string[] roles = new[] { "Admin", "User" };
             foreach (var role in roles)
             {
-                if (await roleManager.RoleExistsAsync(role))
+                if (!await roleManager.RoleExistsAsync(role)) // «‰ »Â ··≈‘«—… !
                 {
                     await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
+
 
             var adminEmail = config["Admin:Email"] ?? "admin@bookshop.local";
             var adminPassword = config["Admin:Password"] ?? "Admin@12345";

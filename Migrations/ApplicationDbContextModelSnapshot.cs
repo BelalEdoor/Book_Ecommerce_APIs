@@ -110,11 +110,10 @@ namespace BOOKSTORE.Migrations
                         .HasColumnName("GenreId");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -153,24 +152,6 @@ namespace BOOKSTORE.Migrations
                     b.HasIndex("shoppingcartid");
 
                     b.ToTable("CartDetails");
-                });
-
-            modelBuilder.Entity("BOOKSTORE.Genre", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("GenreName")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Genre");
                 });
 
             modelBuilder.Entity("BOOKSTORE.Order", b =>
@@ -320,6 +301,25 @@ namespace BOOKSTORE.Migrations
                     b.ToTable("Stock");
                 });
 
+            modelBuilder.Entity("Genre", b =>
+                {
+                    b.Property<int>("GenreId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("GenreId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GenreId"));
+
+                    b.Property<string>("GenreName")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.HasKey("GenreId");
+
+                    b.ToTable("Genre");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -455,10 +455,10 @@ namespace BOOKSTORE.Migrations
 
             modelBuilder.Entity("BOOKSTORE.Book", b =>
                 {
-                    b.HasOne("BOOKSTORE.Genre", "Genre")
+                    b.HasOne("Genre", "Genre")
                         .WithMany("Books")
                         .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Genre");
@@ -581,13 +581,7 @@ namespace BOOKSTORE.Migrations
 
                     b.Navigation("OrderDetails");
 
-                    b.Navigation("Stock")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BOOKSTORE.Genre", b =>
-                {
-                    b.Navigation("Books");
+                    b.Navigation("Stock");
                 });
 
             modelBuilder.Entity("BOOKSTORE.Order", b =>
@@ -598,6 +592,11 @@ namespace BOOKSTORE.Migrations
             modelBuilder.Entity("BOOKSTORE.ShoppingCart", b =>
                 {
                     b.Navigation("CartDetails");
+                });
+
+            modelBuilder.Entity("Genre", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

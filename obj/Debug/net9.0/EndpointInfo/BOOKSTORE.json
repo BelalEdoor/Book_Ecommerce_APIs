@@ -1622,8 +1622,7 @@
           },
           "quantity": {
             "type": "integer",
-            "format": "int32",
-            "readOnly": true
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1673,7 +1672,7 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
+          "genreId": {
             "type": "integer",
             "format": "int32"
           },

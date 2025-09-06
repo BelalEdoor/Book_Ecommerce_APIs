@@ -34,15 +34,15 @@ namespace BOOKSTORE.Controllers
         public async Task<ActionResult<Genre>> Create(Genre entity)
         {
             _context.Genres.Add(entity);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get), new { id = (int)entity.Id }, entity);
+            int v = await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get), new { id = (int)entity.GenreId }, entity);
         }
 
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Genre entity)
         {
-            if (id != (int)entity.Id) return BadRequest();
+            if (id != (int)entity.GenreId) return BadRequest();
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return NoContent();

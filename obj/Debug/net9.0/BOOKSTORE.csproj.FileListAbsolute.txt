@@ -195,6 +195,7 @@ D:\Trainings\6- Back-end development (Trusted Systems)\BookStore APIs\BOOKSTORE\
 D:\Trainings\6- Back-end development (Trusted Systems)\BookStore APIs\BOOKSTORE\BOOKSTORE\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Trainings\6- Back-end development (Trusted Systems)\BookStore APIs\BOOKSTORE\BOOKSTORE\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
 D:\Trainings\6- Back-end development (Trusted Systems)\BookStore APIs\BOOKSTORE\BOOKSTORE\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Trainings\6- Back-end development (Trusted Systems)\BookStore APIs\BOOKSTORE\BOOKSTORE\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Trainings\6- Back-end development (Trusted Systems)\BookStore APIs\BOOKSTORE\BOOKSTORE\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Trainings\6- Back-end development (Trusted Systems)\BookStore APIs\BOOKSTORE\BOOKSTORE\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Trainings\6- Back-end development (Trusted Systems)\BookStore APIs\BOOKSTORE\BOOKSTORE\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll

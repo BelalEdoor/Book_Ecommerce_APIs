@@ -269,7 +269,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BOOKSTORE.Genre, BOOKSTORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Genre, BOOKSTORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -289,13 +289,13 @@
     "Parameters": [
       {
         "Name": "entity",
-        "Type": "BOOKSTORE.Genre",
+        "Type": "Genre",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BOOKSTORE.Genre",
+        "Type": "Genre",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -321,7 +321,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BOOKSTORE.Genre",
+        "Type": "Genre",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -346,7 +346,7 @@
       },
       {
         "Name": "entity",
-        "Type": "BOOKSTORE.Genre",
+        "Type": "Genre",
         "IsRequired": true
       }
     ],
